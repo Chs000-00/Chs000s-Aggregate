@@ -15,7 +15,9 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
 if("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
-    file(GLOB_RECURSE OBJCXXSOURCES CONFIGURE_DEPENDS src/*.mm)
+    file(GLOB_RECURSE OBJCXXSOURCES CONFIGURE_DEPENDS 
+        src/platform/*.mm
+    )
     enable_language(OBJCXX)
     set(SOURCES ${CPPSOURCES} ${OBJCXXSOURCES})
 else()
