@@ -10,9 +10,9 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
 project(Chs000sAggregate VERSION 1.0.0)
 
-file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
-
-add_library(${PROJECT_NAME} SHARED ${SOURCES})
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
+     src/*.cpp
+)
 
 if("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
     file(GLOB_RECURSE OBJCXXSOURCES CONFIGURE_DEPENDS 
@@ -23,6 +23,8 @@ if("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
 else()
     set(SOURCES ${CPPSOURCES})
 endif()
+
+add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
 if (NOT DEFINED ENV{GEODE_SDK})
     message(FATAL_ERROR "Unable to find Geode SDK! Please define GEODE_SDK environment variable to point to Geode")
