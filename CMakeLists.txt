@@ -11,14 +11,14 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 project(Chs000sAggregate VERSION 1.0.0)
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
-     src/platform/**/*.cpp
+     src/**/*.cpp
 )
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
 if("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
     file(GLOB_RECURSE OBJCXXSOURCES CONFIGURE_DEPENDS 
-        src/platform/*.mm
+        src/**/*.mm
     )
     enable_language(OBJCXX)
     set(SOURCES ${CPPSOURCES} ${OBJCXXSOURCES})
