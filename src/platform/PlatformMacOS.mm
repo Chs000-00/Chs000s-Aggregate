@@ -1,6 +1,6 @@
 #import <Cocoa/Cocoa.h>
 #include <Geode/Geode.hpp>
-#include <Platform.hpp>
+#include <platform/Platform.hpp>
 
 using namespace geode::prelude;
 
