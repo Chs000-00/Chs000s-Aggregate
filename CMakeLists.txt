@@ -11,7 +11,7 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 project(Chs000sAggregate VERSION 1.0.0)
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
-     src/*.cpp
+     src/platform/**/*.cpp
 )
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
