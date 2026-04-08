@@ -14,6 +14,8 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
      src/*.cpp
 )
 
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
 if("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
     file(GLOB_RECURSE OBJCXXSOURCES CONFIGURE_DEPENDS 
         src/platform/*.mm
@@ -38,9 +40,5 @@ if("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
 endif()
 
 add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
-
-target_include_directories(${PROJECT_NAME}
-    PUBLIC include
-)
 
 setup_geode_mod(${PROJECT_NAME})
